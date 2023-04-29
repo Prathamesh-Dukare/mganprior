@@ -4,4 +4,4 @@ numpy
 torch
 torchvision
 opencv-python
-tensorflow-gpu<2
+tensorflow
