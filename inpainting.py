@@ -115,7 +115,7 @@ if __name__ == '__main__':
     parser.add_argument('--gan_model', default='pggan_churchoutdoor', help='The name of model used.', type=str)
 
     # Video Settings
-    parser.add_argument('--video', type=bool, default=false, help='Save video. False for no video.')
+    parser.add_argument('--video', type=bool, default=False, help='Save video. False for no video.')
     parser.add_argument('--fps', type=int, default=24, help='Frame rate of the created video.')
 
     args, other_args = parser.parse_known_args()
