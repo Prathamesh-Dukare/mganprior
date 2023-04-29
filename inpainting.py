@@ -87,9 +87,9 @@ if __name__ == '__main__':
     # Loss Parameters
     parser.add_argument('--image_size', default=256,
                         help='Size of images for perceptual model', type=int)
-    parser.add_argument('--loss_type', default='Combine',
+    parser.add_argument('--loss_type', default='L2',
                         help="['VGG', 'L1', 'L2', 'Combine']. 'Combine' means using L2 and Perceptual Loss.")
-    parser.add_argument('--vgg_loss_type', default='L1',
+    parser.add_argument('--vgg_loss_type', default='L2',
                         help="['L1', 'L2']. The loss used in perceptual loss.")
     parser.add_argument('--vgg_layer', default=16,
                         help='The layer used in perceptual loss.', type=int)
@@ -102,7 +102,7 @@ if __name__ == '__main__':
     # Optimization Parameters
     parser.add_argument('--batch_size', default=1,
                         help='Size of images for perceptual loss.', type=int)
-    parser.add_argument('--optimization', default='GD',
+    parser.add_argument('--optimization', default='Adam',
                         help="['GD', 'Adam']. Optimization method used.")  # inversion_type
     parser.add_argument('--init_type', default='Normal',
                         help="['Zero', 'Normal']. Initialization method. Using zero init or Gaussian random vector.")
@@ -115,7 +115,7 @@ if __name__ == '__main__':
     parser.add_argument('--gan_model', default='pggan_churchoutdoor', help='The name of model used.', type=str)
 
     # Video Settings
-    parser.add_argument('--video', type=bool, default=True, help='Save video. False for no video.')
+    parser.add_argument('--video', type=bool, default=false, help='Save video. False for no video.')
     parser.add_argument('--fps', type=int, default=24, help='Frame rate of the created video.')
 
     args, other_args = parser.parse_known_args()
